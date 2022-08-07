@@ -1,0 +1,70 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.Scanner;
+
+
+public class table_multiplication {
+	   public static void main(String[] args) {
+		   
+		   try {
+		   File k_file1 = new File("C:\\Users\\User\\Desktop\\test\\k50.txt");
+			BufferedReader bufferReader = new BufferedReader(new FileReader(k_file1));
+			Scanner scan = new Scanner(bufferReader);
+			double[][] AVD_Analysis= new double[13579][5999];
+			String line = scan.next();
+			for (int j=0; j<5999 ; j++) {
+                for (int i=0 ; i<13579 ; i++) { 
+
+                      double number = Double.parseDouble(line);
+                      AVD_Analysis [i][j] = number;
+
+                      System.out.println("j=" + j);
+                      System.out.println("i=" + i);
+                      
+
+                      if(line.equals("-7.876406873768566474e-04")) {
+                          break;
+                      }
+                      line = scan.next();
+                     
+
+                }
+            }
+			 File k_file = new File("C:\\Users\\User\\Desktop\\test\\QueryTerms.txt");
+				BufferedReader bufferReader1 = new BufferedReader(new FileReader(k_file));
+				Scanner scan1 = new Scanner(bufferReader1);
+				double[][] quries= new double[13579][35];
+				String line1 = scan1.next();
+			for (int j=0; j<35 ; j++) {
+                for (int i=0 ; i<13579 ; i++) { 
+
+                      double number2 = Double.parseDouble(line1);
+                      quries [i][j] = number2;
+
+                      System.out.println("j=" + j);
+                      System.out.println("i=" + i);
+                      
+
+                      if(line1.equals("3.784512506007922487e-03")) {
+                          break;
+                      }
+                      line1 = scan1.next();
+                     
+                }
+            }
+			double results;
+		for(int k=0; k<=5999; k++) {
+			for (int j=0; j<=35 ; j++) {
+                for (int i=0 ; i<13579 ; i++) {
+			results = quries[i][j]*AVD_Analysis[i][k]; 
+			//Vriski ta result kai prepi na vroume ta kalitera
+			
+                }
+			}
+			}
+	   }catch (Exception ex) {
+           ex.printStackTrace();
+       }
+	}
+}
