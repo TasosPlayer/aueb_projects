@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Book Store</title>
+    <meta charset="UTF-8">
+
+    <!-- JS code loaded and executed 
+            within the page -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src="js/main.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="models/favorites.js" type="text/javascript"></script> -->
+    
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="overlay">
+            <div class="box">
+                <h1 class="page-title">Welcome, what would you like to read?</h1>
+
+                <form onsubmit="return searchBooksOrAuthors()">
+                    <input type="text" id="search" name="search" placeholder="Search anything...">
+                    <br>
+                    <input type="submit" id="searchButton" value="Search">
+                </form>
+
+                <!-- <h2> Matching Search Results:</h1> -->
+                
+                <script id="search-results" type="text/x-handlebars-template">    
+                    <div class="container">
+                        {{#each work}}
+                            <div class="result">
+                                <h4>{{ titleweb }}</h4>
+                                <p>{{ titleSubtitleAuth }}</p>
+
+                                <button id="{{workid}}"  class="fav jsfav" onclick="add('{{titleweb}}' , '{{authorweb}}' , '{{workid}}')">Favorite <span class="material-icons">favorite_border</span></button>                            
+
+                                <!-- <button class="unfav jsfav" onclick="remove('{{workid}}')">Unfavorite <span class="material-icons">favorite</span></button> -->
+                            </div>
+                        {{/each}}  
+                    </div>
+                </script>
+                <div id="printed"></div> 
+                <form  action="/favorites" method="get">
+                    <input type="submit" id="browseFavoritesList" value="Browse Favorites List">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

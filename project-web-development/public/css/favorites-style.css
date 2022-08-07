@@ -1,0 +1,60 @@
+
+body,html{
+    padding: 0px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(17, 15, 17);
+}
+.wrapper {
+    background-color: #222;
+    background-image: url(../img/bg2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-gap: 20px;
+}
+h1 {
+    color: rgb(236, 33, 33);
+    text-align: center;
+}
+.jsfav {
+
+    
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 100px;
+    background-color: rgb(190, 64, 64);
+    color: #fff;
+    border: none;
+    box-shadow: 0 3px 13px rgba(0,0,0,.05);
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    margin-top: 5px;
+}
+.jsfav span {
+    vertical-align: middle;
+}
+.jsfav:hover {
+    background-color: rgb(92, 13, 13);
+    transition: .3s all;
+    cursor: pointer;
+}
+
+.lista{
+    border:20px solid rgb(226, 233, 226);
+    border-radius: 50px;
+    margin-left:400px;
+    align-items: center;
+}

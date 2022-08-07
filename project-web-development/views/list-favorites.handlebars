@@ -1,0 +1,27 @@
+{{!-- My Favorites Website strcture, Add css  --}}
+<div class="wrapper">
+    <h1 > <title>{{title}}</title></h1>
+    <div class="container">
+        <ol class="lista">
+            {{#each favorites}}
+                <article >
+                    <li>Title: {{title}} <br> Author: {{author}} <br> Work Id: {{id}}</li>
+                    {{!-- <p><a href="favorites/edit/{{id}}"></a> </p> --}}
+                    <div class="flex-buttons">
+                        {{!-- //<button id="btn" class="unfav jsfav" onclick="remove2('{{id}}')">Unfavorite <span class="material-icons">favorite</span></button>  --}}
+                        
+                        <form onsubmit="remove2('{{id}}')" action="/favorites" method="get">
+                            <input type="submit" id="btn" class="unfav jsfav" onclick="location.href='favorites'" value="Remove">
+                        </form>
+                       
+                        <form onsubmit="goToEditPage('{{title}}' , '{{author}}' , '{{id}}')" >
+                            <input type="submit" id="btn" class="fav jsfav"  value="Edit">
+                        </form>
+                        
+                    </div>
+                </article>
+            {{/each}}
+            
+        </ol>
+    </div>
+</div>
